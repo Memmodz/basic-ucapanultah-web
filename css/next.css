@@ -1,0 +1,253 @@
+/* Background garis-garis pink */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: repeating-linear-gradient(
+        90deg,
+        #ffcccb,
+        #ffcccb 10px,
+        #ffe4e1 10px,
+        #ffe4e1 20px
+    );
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    overflow: hidden; /* Mencegah scrollbar muncul */
+}
+
+/* Header */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffc0cb; /* Warna latar belakang pink */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0%; /* Tempatkan sedikit di atas */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/* Kontainer kartu */
+.container {
+    position: relative;
+    text-align: center;
+    width: 350px; /* Ukuran kontainer diperbesar */
+    height: 500px; /* Ukuran kontainer diperbesar */
+    display: flex;
+    align-items: flex-start; /* Mengatur posisi kartu lebih ke atas */
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Efek tumpukan kartu */
+.card-container {
+    position: fixed;
+    text-align: center;
+    top: 90px; /* Mengatur agar kartu lebih ke atas */
+    left: 49%;
+    transform: translateX(-50%); /* Memastikan kartu tetap berada di tengah secara horizontal */
+    width: 330px; /* Ukuran tumpukan kartu diperbesar */
+    height: 460px; /* Ukuran tumpukan kartu diperbesar */
+}
+
+/* Kartu utama */
+.card {
+    text-align: center;
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    z-index: 1;
+    padding: 20px 20px 40px; /* Padding diperbesar */
+}
+
+/* Latar belakang pink di dalam kartu */
+.card-inner {
+    text-align: center;
+    width: calc(100% - 40px); /* Sesuaikan jarak kiri dan kanan */
+    height: 80%;
+    background: #ffc0cb;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+
+
+
+
+/* Posisi gambar */
+.card-inner img {
+    text-align: center;
+    margin-top: 150px; /* Menambah jarak atas gambar */
+    width: auto;
+    height: 220px; /* Perbesar ukuran gambar */
+    margin-bottom: 120px; /* Sesuaikan jarak gambar ke teks */
+}
+
+/* Posisi teks */
+/* Teks di luar kartu pink, tetap dalam kartu putih */
+.card p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -10px; /* Beri jarak dari kotak pink */
+    padding: 10px;
+}
+/* Gaya untuk video dalam kartu */
+.card-inner video {
+    text-align: center;
+    width: 100%; /* Memastikan video menyesuaikan lebar kartu */
+    height: 250%; /* Biarkan tinggi menyesuaikan proporsi */
+    max-height: 350px; /* Batasi tinggi agar tidak terlalu besar */
+    border-radius: 10px; /* Memberikan sudut melengkung agar lebih estetik */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Pastikan video tidak terdistorsi */
+}
+
+.card-inner img {
+    text-align: center;
+    width: 100%; /* Memastikan video menyesuaikan lebar kartu */
+    height: 250%; /* Biarkan tinggi menyesuaikan proporsi */
+    max-height: 350px; /* Batasi tinggi agar tidak terlalu besar */
+    border-radius: 10px; /* Memberikan sudut melengkung agar lebih estetik */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Pastikan video tidak terdistorsi */
+}
+
+#btnLanjut  {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10%;
+    width: 150px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ff9999;
+    padding: 10px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 10px;
+    transition: background 0.3s ease;
+}
+
+/* Efek bertumpuk */
+.card:nth-child(1) { transform: translateX(0) translateY(0) rotate(0deg); z-index: 5; }
+.card:nth-child(2) { transform: translateX(10px) translateY(6px) rotate(2deg); z-index: 4; opacity: 0.9; }
+.card:nth-child(3) { transform: translateX(20px) translateY(12px) rotate(4deg); z-index: 3; opacity: 0.8; }
+.card:nth-child(4) { transform: translateX(30px) translateY(18px) rotate(6deg); z-index: 2; opacity: 0.7; }
+.card:nth-child(5) { transform: translateX(40px) translateY(24px) rotate(8deg); z-index: 1; opacity: 0.6; }
+
+/* Tombol navigasi */
+.nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.nav button {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ff9999;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background 0.3s ease;
+}
+
+.nav button:hover {
+    background-color: #ff9999;
+    color: white;
+}
+
+.nav button img {
+    width: 18px;
+    height: 16px;
+}
+
+/* ------------------------------
+   RESPONSIF UNTUK HP (TETAP BERTUMPUK)
+------------------------------ */
+
+@media (max-width: 480px) {
+    /* Ukuran kartu di HP lebih kecil */
+    .card-container {
+        width: 260px;
+        height: 400px;
+        left: 44%;
+        transform: translateX(-50%);
+    }
+
+    /* Kartu di HP tetap pakai posisi absolute (tetap bertumpuk) */
+    .card {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    /* Efek bertumpuk yang lebih kecil */
+    .card:nth-child(1) {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        z-index: 5;
+    }
+    .card:nth-child(2) {
+        transform: translateX(6px) translateY(5px) rotate(1.5deg);
+        z-index: 4;
+        opacity: 0.9;
+    }
+    .card:nth-child(3) {
+        transform: translateX(12px) translateY(10px) rotate(3deg);
+        z-index: 3;
+        opacity: 0.8;
+    }
+    .card:nth-child(4) {
+        transform: translateX(18px) translateY(15px) rotate(4.5deg);
+        z-index: 2;
+        opacity: 0.7;
+    }
+    .card:nth-child(5) {
+        transform: translateX(24px) translateY(20px) rotate(6deg);
+        z-index: 1;
+        opacity: 0.6;
+    }
+
+    /* Sesuaikan ukuran media (gambar & video) */
+    .card-inner video{
+        max-height: 320px;
+        font-size: small;
+    }
+    .card-inner img {
+        margin-top: 120px;
+        max-height: 320px;
+    }
+
+    /* Kurangi ukuran teks agar pas */
+    .card p {
+        font-size: 0.9rem;
+
+    }
+}
